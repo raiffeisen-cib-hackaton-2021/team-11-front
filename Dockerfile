@@ -1,6 +1,11 @@
-from node:latest
-RUN mkdir /app
-COPY . /app
+FROM node:latest
+
+COPY . /src
+WORKDIR /src
+
+RUN npm install
+RUN npm run production
+
 EXPOSE 3000
-WORKDIR /app
-CMD npm start
+
+CMD [ "node", "server.js" ]
