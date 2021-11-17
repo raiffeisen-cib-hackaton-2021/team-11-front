@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fcc/icons": "file:_fcc/icons.tgz",
+    "@fcc/react-use": "file:_fcc/react-use.tgz",
+    "@fcc/tokens": "file:_fcc/tokens.tgz",
+    "@fcc/ui": "file:_fcc/ui.tgz",
+    "@fcc/ui-primitives": "file:_fcc/ui-primitives.tgz",
+    "@fcc/ui-theme": "file:_fcc/ui-theme.tgz",
+    "@fcc/utils": "file:_fcc/utils.tgz",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
