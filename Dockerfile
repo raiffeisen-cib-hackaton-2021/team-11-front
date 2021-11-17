@@ -1,7 +1,6 @@
 FROM node:latest
 
 COPY . /src
-COPY . /_fcc
 WORKDIR /src
 
 RUN npm install
