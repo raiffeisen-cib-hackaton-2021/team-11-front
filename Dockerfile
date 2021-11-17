@@ -4,8 +4,8 @@ COPY . /src
 WORKDIR /src
 
 RUN npm install
-RUN npm run production
+RUN npm run build
 
 EXPOSE 3000
 
-CMD [ "node", "server.js" ]
+CMD [ "npx", "serve", "-s", 'build', '-l', '3000' ]
