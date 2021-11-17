@@ -1,8 +1,7 @@
-FROM node:14
+FROM node:latest
 
 COPY . /src
 COPY . /_fcc
-COPY . /package-lock.json
 WORKDIR /src
 
 RUN npm install
