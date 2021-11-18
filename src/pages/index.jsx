@@ -1,4 +1,4 @@
-import { TopicCard } from "../features/TopicCard/TopicCard.jsx";
+import { TopicCard } from "features/TopicCard/TopicCard";
 
 export function MainPage() {
   return (
