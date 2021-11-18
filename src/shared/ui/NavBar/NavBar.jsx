@@ -13,7 +13,7 @@ export function NavBar() {
           </RouterLink>
         </Flex.Item>
         <Flex.Item>
-          <RouterLink to="/notifications">
+          <RouterLink to="/topics/all">
             <Button design="ghost">
               <Notification />
               Уведомления

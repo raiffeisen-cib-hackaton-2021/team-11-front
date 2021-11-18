@@ -8,8 +8,8 @@ export function AttentionView(props) {
       <ViewWrapper>
         <img
           src="/images/attention.jpg"
-          width="690px"
-          height="250px"
+          width="100%"
+          height="300px"
           alt="attention"
         />
         <Title>Важное</Title>

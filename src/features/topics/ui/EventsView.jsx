@@ -6,7 +6,7 @@ export function EventsView(props) {
   return (
     <Wrapper>
       <ViewWrapper>
-        <img src="/images/event.jpg" width="690px" height="250px" alt="event" />
+        <img src="/images/event.jpg" width="100%" height="300px" alt="event" />
         <Title>Мероприятия</Title>
         <Text>Новости и приглашения на предстоящие мероприятия</Text>
       </ViewWrapper>

@@ -1,52 +1,57 @@
 import styled from "styled-components";
 import { format } from "date-fns";
-import { Badge, Heading, Span, Whitespace } from "@fcc/ui";
+import { Badge, Heading, Span, Whitespace, Flex } from "@fcc/ui";
 import { Dislike, Like } from "@fcc/icons";
 import { CATEGORIES_CONFIG } from "../../../constants";
 import { useState } from "react";
+import { RouterLink } from "shared/ui/Link/Link";
 
 const votedIds = {
   like: "like",
   dislike: "dislike",
 };
 
-export const TopicCard = ({
+export const MiniNotificationCard = ({
   type,
   title = fishTitle,
   previewText = fishText,
 } = {}) => {
   const [voted, setVoted] = useState("");
 
-  // надо будет лайки с постов также с бэка получать
   const handleVoted = (id) => () => {
     setVoted(id);
   };
   return (
     <CardWrapper>
       <CardHeader>
-        <Badge color={CATEGORIES_CONFIG[type].color}>
-          {CATEGORIES_CONFIG[type].title}
-        </Badge>
-        <Whitespace ml="s10">
-          <Span>{format(new Date(), "dd.MM.yyyy")}</Span>
-        </Whitespace>
+        <Flex>
+          <Badge size="s" color={CATEGORIES_CONFIG[type].color}>
+            {CATEGORIES_CONFIG[type].title}
+          </Badge>
+          <Whitespace ml="s4">
+            <Span size="s">{format(new Date(), "dd.MM.yyyy")}</Span>
+          </Whitespace>
+        </Flex>
+
+        <VotedContainer>
+          <IconWrapper
+            voted={voted === votedIds.dislike}
+            onClick={handleVoted(votedIds.dislike)}
+          >
+            <Dislike size="s" />
+          </IconWrapper>
+          <IconWrapper
+            voted={voted === votedIds.like}
+            onClick={handleVoted(votedIds.like)}
+          >
+            <Like size="s" />
+          </IconWrapper>
+        </VotedContainer>
       </CardHeader>
-      <Heading margin="xl">{title}</Heading>
+      <RouterLink to="/topics/all">
+        <Heading size="xs">{title}</Heading>
+      </RouterLink>
       <CardBody>{previewText}</CardBody>
-      <CardFooter>
-        <IconWrapper
-          voted={voted === votedIds.dislike}
-          onClick={handleVoted(votedIds.dislike)}
-        >
-          <Dislike size="l" />
-        </IconWrapper>
-        <IconWrapper
-          voted={voted === votedIds.like}
-          onClick={handleVoted(votedIds.like)}
-        >
-          <Like size="l" />
-        </IconWrapper>
-      </CardFooter>
     </CardWrapper>
   );
 };
@@ -54,7 +59,8 @@ export const TopicCard = ({
 const CardWrapper = styled.div`
   font-size: 16px;
   border-radius: 8px;
-  padding: 24px;
+  width: 400px;
+  padding: 16px;
   background-color: #ffffff;
   box-shadow: 0 8px 32px 0 rgb(0 0 0 / 8%);
   margin-bottom: 30px;
@@ -63,20 +69,19 @@ const CardWrapper = styled.div`
 const CardHeader = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  justify-content: space-between;
 `;
 
 const CardBody = styled.div`
   color: #808185;
-  line-height: 26px;
+  font-size: 12px;
   justify-content: flex-start;
 `;
 
-const CardFooter = styled.div`
+const VotedContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 20px 0 0;
 `;
 
 const IconWrapper = styled.div`

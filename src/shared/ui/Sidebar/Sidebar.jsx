@@ -8,14 +8,20 @@ import {
   WarningTr,
 } from "@fcc/icons";
 import { CATEGORIES, CATEGORIES_CONFIG } from "../../../constants";
+import { useLocation } from "react-router-dom";
 
 export function Sidebar() {
+  const location = useLocation();
+  console.log("location", location);
+
+  const isSelected = (path) => location.pathname === path;
+
   return (
     <SidebarWrapper className="sidebar">
       <H3 margin="s">Каналы</H3>
       <List>
         {links.map((link) => (
-          <ListItem key={link.path}>
+          <ListItem isSelected={isSelected(link.path)} key={link.path}>
             {link.icon}
             <RouterLink to={link.path}>
               <Span size="xl">{link.title}</Span>
@@ -28,6 +34,7 @@ export function Sidebar() {
 }
 
 const SidebarWrapper = styled.aside`
+  min-width: 340px;
   width: 290px;
   position: sticky;
   top: 90px;
@@ -38,6 +45,7 @@ const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 80%;
 `;
 
 const ListItem = styled.li`
@@ -47,6 +55,7 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   padding: 0 16px;
+  background: ${({ isSelected }) => isSelected && "#D5D5D6"};
 
   :hover {
     background: #e9eaea;
@@ -64,6 +73,10 @@ const ListItem = styled.li`
 
 const links = [
   {
+    path: "/topics/all",
+    title: CATEGORIES_CONFIG[CATEGORIES.ALL].title,
+  },
+  {
     path: "/topics/attention",
     title: CATEGORIES_CONFIG[CATEGORIES.ATTENTION].title,
     icon: <WarningTr />,
@@ -79,8 +92,8 @@ const links = [
     icon: <Entertainment1 />,
   },
   {
-    path: "/topics/congratulations",
-    title: CATEGORIES_CONFIG[CATEGORIES.CONGRATULATIONS].title,
+    path: "/topics/offers",
+    title: CATEGORIES_CONFIG[CATEGORIES.OFFERS].title,
     icon: <Entertainment2 />,
   },
 ];

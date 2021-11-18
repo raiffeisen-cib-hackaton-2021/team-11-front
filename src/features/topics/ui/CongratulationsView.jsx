@@ -7,17 +7,17 @@ export function CongratulationsView(props) {
     <Wrapper>
       <ViewWrapper>
         <img
-          src="/images/presents.jpg"
-          width="690px"
-          height="250px"
+          src="/images/offer.jpg"
+          width="100%"
+          height="300px"
           alt="presents"
         />
-        <Title>Поздравления</Title>
-        <Text>Настроимся на позитивную волну</Text>
+        <Title>Предложения</Title>
+        <Text>Интересные предложения специально для вас</Text>
       </ViewWrapper>
 
       {props.data.map((info) => (
-        <TopicCard info={info} type={CATEGORIES.CONGRATULATIONS} />
+        <TopicCard info={info} type={CATEGORIES.OFFERS} />
       ))}
     </Wrapper>
   );

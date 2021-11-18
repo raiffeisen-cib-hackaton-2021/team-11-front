@@ -6,9 +6,9 @@ export function NewsView(props) {
   return (
     <Wrapper>
       <ViewWrapper>
-        <img src="/images/bank.jpg" width="690px" height="250px" alt="bank" />
+        <img src="/images/bank.jpg" width="100%" height="300px" alt="bank" />
         <Title>Новости</Title>
-        <Text>Интересные новости на повестке дня</Text>
+        <Text>Актуальные новости на повестке дня</Text>
       </ViewWrapper>
 
       {props.data.map((info) => (
