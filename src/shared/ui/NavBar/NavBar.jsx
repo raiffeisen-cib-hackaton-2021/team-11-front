@@ -33,4 +33,5 @@ const Nav = styled.nav`
   left: 0;
   background-color: #fefefe;
   z-index: 1;
+  margin-bottom: 30px;
 `;

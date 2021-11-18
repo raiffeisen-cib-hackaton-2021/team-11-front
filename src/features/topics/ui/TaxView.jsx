@@ -1,4 +1,4 @@
-import { TopicCard } from "features/TopicCard/TopicCard";
+import { TopicCard } from "shared/ui/TopicCard/TopicCard";
 
 export function TaxView(props) {
   return (

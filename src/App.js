@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { NavBar } from "features/NavBar/NavBar";
+import { NavBar } from "shared/ui/NavBar/NavBar";
+import { Sidebar } from "shared/ui/Sidebar/Sidebar";
 import { MainPage } from "pages";
-import { Sidebar } from "features/Sidepanel/Sidebar";
 import { Topic } from "pages/topics/topic";
 
 function App() {
