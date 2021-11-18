@@ -4,8 +4,13 @@ import { useState } from "react";
 import styled from "styled-components";
 import { ModalSuccess } from "shared/ui/Modal/ModalSuccess";
 
-export const ModalWindow = ({ title, startText, feedbackText }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const ModalWindow = ({
+  title,
+  startText,
+  feedbackText,
+  setIsOpen,
+  isOpen,
+}) => {
   const [isDislike, setIsDislike] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -25,7 +30,6 @@ export const ModalWindow = ({ title, startText, feedbackText }) => {
   };
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Show modal</Button>
       <ModalBlockBackground isOpen={isOpen}>
         <ModalWrapper isOpen={isOpen}>
           <ModalHeader>
