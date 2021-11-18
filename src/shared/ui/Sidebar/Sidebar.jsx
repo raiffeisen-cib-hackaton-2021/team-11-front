@@ -12,7 +12,6 @@ import { useLocation } from "react-router-dom";
 
 export function Sidebar() {
   const location = useLocation();
-  console.log("location", location);
 
   const isSelected = (path) => location.pathname === path;
 
@@ -21,7 +20,7 @@ export function Sidebar() {
       <H3 margin="s">Каналы</H3>
       <List>
         {links.map((link) => (
-          <ListItem isSelected={isSelected(link.path)} key={link.path}>
+          <ListItem data-selected={isSelected(link.path)} key={link.path}>
             {link.icon}
             <RouterLink to={link.path}>
               <Span size="xl">{link.title}</Span>
@@ -55,7 +54,9 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   padding: 0 16px;
-  background: ${({ isSelected }) => isSelected && "#D5D5D6"};
+  &[data-selected="true"] {
+    background-color: #d5d5d6;
+  }
 
   :hover {
     background: #e9eaea;
