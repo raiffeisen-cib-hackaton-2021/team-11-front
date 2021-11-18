@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import { NavBar } from "../src/features/NavBar/NavBar.jsx";
-import { MainPage } from "../src/pages/index.js";
-import { Sidepanel } from "../src/features/Sidepanel/Sidepanel.jsx";
+import { NavBar } from "./features/NavBar/NavBar";
+import { MainPage } from "./pages";
+import { Sidepanel } from "./features/Sidepanel/Sidepanel";
+import {TopicPage} from './features/TopicPage/TopicPage'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Sidepanel />
       <main className="content">
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" exact element={<MainPage />} />
+            <Route path="/topics" exact element={<TopicPage/>}/>
         </Routes>
       </main>
     </div>
