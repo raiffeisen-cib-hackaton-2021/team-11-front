@@ -1,7 +1,13 @@
 import { H3, Span } from "@fcc/ui";
 import styled from "styled-components";
 import { RouterLink } from "shared/ui/Link/Link";
-import { Savings, Microphone, Entertainment2, WarningTr } from "@fcc/icons";
+import {
+  Entertainment1,
+  Microphone,
+  Entertainment2,
+  WarningTr,
+} from "@fcc/icons";
+import { CATEGORIES, CATEGORIES_CONFIG } from "../../../constants";
 
 export function Sidebar() {
   return (
@@ -40,6 +46,7 @@ const ListItem = styled.li`
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  padding: 0 16px;
 
   :hover {
     background: #e9eaea;
@@ -56,12 +63,24 @@ const ListItem = styled.li`
 `;
 
 const links = [
-  { path: "/topics/tax", title: "Налоги", icon: <Savings /> },
-  { path: "/topics/news", title: "Новости", icon: <Microphone /> },
+  {
+    path: "/topics/attention",
+    title: CATEGORIES_CONFIG[CATEGORIES.ATTENTION].title,
+    icon: <WarningTr />,
+  },
+  {
+    path: "/topics/news",
+    title: CATEGORIES_CONFIG[CATEGORIES.NEWS].title,
+    icon: <Microphone />,
+  },
+  {
+    path: "/topics/events",
+    title: CATEGORIES_CONFIG[CATEGORIES.EVENTS].title,
+    icon: <Entertainment1 />,
+  },
   {
     path: "/topics/congratulations",
-    title: "Поздравления",
+    title: CATEGORIES_CONFIG[CATEGORIES.CONGRATULATIONS].title,
     icon: <Entertainment2 />,
   },
-  { path: "/topics/attention", title: "Внимание", icon: <WarningTr /> },
 ];

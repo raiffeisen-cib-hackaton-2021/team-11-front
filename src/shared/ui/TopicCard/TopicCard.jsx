@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import { format } from "date-fns";
 import { Badge, Heading, Span, Whitespace } from "@fcc/ui";
+import { CATEGORIES_CONFIG } from "../../../constants";
 
 export const TopicCard = ({
-  topic,
-  date,
+  type,
   title = fishTitle,
   previewText = fishText,
 } = {}) => {
   return (
     <CardWrapper>
       <CardHeader>
-        <Badge color="miami30">{topic}</Badge>
+        <Badge color={CATEGORIES_CONFIG[type].color}>
+          {CATEGORIES_CONFIG[type].title}
+        </Badge>
         <Whitespace ml="s10">
           <Span>{format(new Date(), "dd.MM.yyyy")}</Span>
         </Whitespace>

@@ -1,8 +1,14 @@
 import { useParams } from "react-router-dom";
-import { TaxView } from "features/topics/ui/TaxView";
+import { EventsView } from "features/topics/ui/EventsView";
+import { NewsView } from "features/topics/ui/NewsView";
+import { CongratulationsView } from "features/topics/ui/CongratulationsView";
+import { AttentionView } from "features/topics/ui/AttentionView";
 
 const viewMap = {
-  tax: TaxView,
+  events: EventsView,
+  news: NewsView,
+  congratulations: CongratulationsView,
+  attention: AttentionView,
 };
 
 export function Topic() {
