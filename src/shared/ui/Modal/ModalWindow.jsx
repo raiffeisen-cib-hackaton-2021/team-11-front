@@ -10,8 +10,9 @@ export const ModalWindow = ({
   feedbackText,
   setIsOpen,
   isOpen,
-}) => {
-  const [isDislike, setIsDislike] = useState(false);
+  feedbackStep = false,
+} = {}) => {
+  const [isDislike, setIsDislike] = useState(feedbackStep);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const enterClick = () => {

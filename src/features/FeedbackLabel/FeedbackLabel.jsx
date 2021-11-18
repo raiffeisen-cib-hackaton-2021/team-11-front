@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ChatAskRaif } from "@fcc/icons";
-import { ModalWindow } from "../../shared/ui/Modal/ModalWindow";
+import { ModalWindow } from "shared/ui/Modal/ModalWindow";
 import { useState } from "react";
 
 export const FeedbackLabel = () => {
@@ -17,10 +17,11 @@ export const FeedbackLabel = () => {
       </LabelWrapper>
       <ModalWindow
         title="Обратная связь"
-        startText="Оцените %НАЗВАНИЕ СЦЕНАРИЯ%, было удобно и все ли получилось?"
-        feedbackText="Помогите нам улучшить %НАЗВАНИЕ СЦЕНАРИЯ%"
+        startText=""
+        feedbackText="Напишите нам, что не понравилось или пошло не так"
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        feedbackStep
       />
     </>
   );
