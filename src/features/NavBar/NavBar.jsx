@@ -1,10 +1,11 @@
 import { Logotype, Flex, Button, Link as LinkDS } from "@fcc/ui";
 import { Notification } from "@fcc/icons";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export function NavBar() {
   return (
-    <nav className="header">
+    <Nav className="header">
       <Flex p="s4" justifyContent="space-between">
         <Flex.Item>
           <LinkDS as={Link} to="/">
@@ -21,6 +22,15 @@ export function NavBar() {
         </Flex.Item>
       </Flex>
       <hr />
-    </nav>
+    </Nav>
   );
 }
+
+const Nav = styled.nav`
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fefefe;
+  z-index: 1;
+`;

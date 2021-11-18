@@ -35,6 +35,6 @@ code {
   grid-template-areas:
     "header header header"
     "sidebar content content"
-    "sidebar  content  content";
+    "......  content  content";
   padding: 0 30px;
 }
