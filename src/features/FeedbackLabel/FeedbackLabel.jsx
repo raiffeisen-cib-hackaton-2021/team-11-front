@@ -30,7 +30,7 @@ export const FeedbackLabel = () => {
 const LabelWrapper = styled.div`
   position: fixed;
   z-index: 100;
-  bottom: 20px;
+  bottom: 100px;
   right: 100px;
   height: 60px;
   width: 60px;
